@@ -82,9 +82,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                             binding.shimmerDetail.stopShimmer()
                             binding.shimmerDetail.visibility = View.GONE
                             binding.includeDetailError.constraintError.visibility = View.VISIBLE
-                            binding.includeDetailError.tvErrorDesc.text = "Data Not Found"
                         }
-
                     } else {
                         Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
                     }

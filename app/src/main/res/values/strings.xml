@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">TheMeal</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Meal Recipe</string>
     <string name="all_meal">Meal</string>
     <string name="all_bookmark">Bookmark</string>
     <string name="main_filter">Filter</string>

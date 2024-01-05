@@ -77,10 +77,19 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             }
         }
         binding.includeMainError.btnErrorResetRefresh.setOnClickListener {
-            if (!filterModel.area.isNullOrBlank() || !filterModel.category.isNullOrBlank()) {
-                viewModel.getFilter(area = filterModel.area, category = filterModel.category)
-            } else {
+            if (binding.includeMainError.btnErrorResetRefresh.text == "Reset"){
+                filterModel = FilterModel()
+                binding.chipgroupMainFilter.removeAllViews()
+                binding.tietMainSearch.text = null
+                binding.tietMainSearch.clearFocus()
+                viewModel.key = ""
                 viewModel.getSearch()
+            }else {
+                if (!filterModel.area.isNullOrBlank() || !filterModel.category.isNullOrBlank()) {
+                    viewModel.getFilter(area = filterModel.area, category = filterModel.category)
+                } else {
+                    viewModel.getSearch()
+                }
             }
         }
     }
@@ -142,7 +151,12 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                     binding.shimmerMain.visibility = View.GONE
                     binding.swiperMain.isRefreshing = false
                     binding.includeMainError.constraintError.visibility = View.VISIBLE
-                    binding.includeMainError.tvErrorDesc.text = it.error
+                    if (it.error == "null") {
+                        binding.includeMainError.tvErrorDesc.text = "Data Not Found"
+                        binding.includeMainError.btnErrorResetRefresh.text = "Reset"
+                    } else {
+                        binding.includeMainError.tvErrorDesc.text = it.error
+                    }
                 }
 
                 is ViewState.Success -> {

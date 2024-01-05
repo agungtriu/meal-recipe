@@ -19,19 +19,9 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
     private val _resultSearch = MutableLiveData<ViewState<List<MealItem>>>()
     val resultSearch: LiveData<ViewState<List<MealItem>>> get() = _resultSearch
     var key: String? = ""
-    var filterModel: FilterModel = FilterModel()
 
     init {
         getSearch()
-    }
-
-    private var searchJob: Job? = null
-    fun searchDebounced() {
-        searchJob?.cancel()
-        searchJob = viewModelScope.launch {
-            delay(1000L)
-            getSearch()
-        }
     }
 
     fun getSearch() {
@@ -46,7 +36,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
                     }
                     _resultSearch.postValue(ViewState.Success(data))
                 } else {
-                    throw NullPointerException("Data Not Found")
+                    throw NullPointerException("null")
                 }
             } catch (t: Throwable) {
                 _resultSearch.postValue(ViewState.Error(t.message.toString()))
@@ -66,7 +56,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
                     }
                     _resultSearch.postValue(ViewState.Success(data))
                 } else {
-                    throw NullPointerException("Data Not Found")
+                    throw NullPointerException("null")
                 }
             } catch (t: Throwable) {
                 _resultSearch.postValue(ViewState.Error(t.message.toString()))

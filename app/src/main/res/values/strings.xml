@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TheMeal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_meal">Meal</string>
+    <string name="all_bookmark">Bookmark</string>
+    <string name="main_filter">Filter</string>
+    <string name="meal_search">Search</string>
+    <string name="error_refresh">Refresh</string>
+    <string name="main_reset">Reset</string>
+    <string name="all_area">Area</string>
+    <string name="all_category">Category</string>
+    <string name="all_show">Show</string>
+</resources>

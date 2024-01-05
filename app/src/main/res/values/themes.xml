@@ -1,0 +1,25 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TheMeal" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.TheMeal" parent="Base.Theme.TheMeal" />
+
+    <style name="ThemeOverlay.App.Chip" parent="">
+        <item name="elevation">0dp</item>
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Suggestion">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+    </style>
+
+    <style name="Theme.TheMeal.ChipGroup.Chip" parent="TextAppearance.Material3.LabelLarge">
+        <item name="chipBackgroundColor">@color/white</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="closeIconVisible">false</item>
+    </style>
+</resources>

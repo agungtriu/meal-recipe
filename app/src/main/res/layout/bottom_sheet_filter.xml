@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.filter.BottomSheetFilterFragment">
+
+    <FrameLayout
+        style="@style/Widget.Material3.BottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rectangle_rounded_top_20"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                android:id="@+id/draghandle_bottomsheetfilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_bottomsheetfilter_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/main_filter"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/draghandle_bottomsheetfilter" />
+
+            <Button
+                android:id="@+id/btn_bottomsheetfilter_reset"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_reset"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_bottomsheetfilter_filter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_bottomsheetfilter_filter" />
+
+            <TextView
+                android:id="@+id/tv_bottomsheetfilter_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/all_area"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_bottomsheetfilter_filter" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_bottomsheetfilter_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_bottomsheetfilter_area">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipgroup_bottomshettfilter_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:singleSelection="true" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_bottomsheetfilter_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_bottomsheetfilter_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/all_category"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/constraint_bottomsheetfilter_area" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_bottomsheetfilter_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_bottomsheetfilter_category">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipgroup_bottomshettfilter_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:singleSelection="true" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_bottomsheetfilter_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            layout="@layout/item_chip_shimmer"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_bottomsheetfilter_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:includeFontPadding="false"
+                android:text="@string/all_show"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraint_bottomsheetfilter_category"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

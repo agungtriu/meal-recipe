@@ -4,14 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/all_background_top"
     tools:context=".ui.main.MainFragment">
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="-130dp"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_circle"
+        app:layout_constraintBottom_toTopOf="@id/v_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -20,18 +31,16 @@
             android:layout_height="wrap_content"
             app:menu="@menu/menu_main_top"
             app:title="@string/app_name"
-            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+            app:titleTextColor="@color/white" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </com.google.android.material.appbar.AppBarLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_main_search"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
+        app:boxBackgroundColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -51,6 +60,17 @@
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/v_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/all_rectangle_rounded_top_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_main_search" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiper_main"
@@ -135,7 +155,7 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 app:chipBackgroundColor="@color/colorShimmer"
                 app:chipStrokeColor="@color/colorShimmer"
                 app:layout_constraintStart_toStartOf="parent"

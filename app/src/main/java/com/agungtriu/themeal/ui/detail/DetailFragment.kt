@@ -103,6 +103,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             when (it) {
                 is ViewState.Loading -> {
                     binding.includeDetailError.constraintError.visibility = View.GONE
+                    binding.cvDetail.visibility = View.GONE
                     binding.shimmerDetail.startShimmer()
                     binding.shimmerDetail.visibility = View.VISIBLE
                     binding.constraintDetailContent.visibility = View.GONE
@@ -118,6 +119,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 }
 
                 is ViewState.Success -> {
+                    binding.cvDetail.visibility = View.VISIBLE
                     loadLocal = false
                     displayContent(it.data.toMealEntity())
                 }

@@ -43,6 +43,7 @@ class DetailAdapter(private val lifecycle: Lifecycle) :
                 Glide.with(itemView.context)
                     .load(item)
                     .placeholder(R.mipmap.ic_thumbnail)
+                    .centerCrop()
                     .into(binding.ivItemdetail)
             }
         }

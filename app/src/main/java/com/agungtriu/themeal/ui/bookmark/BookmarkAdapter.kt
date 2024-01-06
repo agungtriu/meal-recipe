@@ -3,6 +3,7 @@ package com.agungtriu.themeal.ui.bookmark
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.DiffUtil
@@ -38,6 +39,7 @@ class BookmarkAdapter(
                 .into(binding.ivItemmeal)
             binding.tvItemmeal.text = item.title
             binding.ivItemmealBookmark.visibility = View.VISIBLE
+            binding.ivItemmealBookmark.setColorFilter(ContextCompat.getColor(itemView.context, R.color.black))
             binding.ivItemmealBookmark.setOnClickListener {
                 viewModel.deleteMeals(item.id ?: "")
             }
